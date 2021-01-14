@@ -21,7 +21,7 @@ body {
 }
 
 #design-image {
-    background: url("./design/desktop-design.jpg") no-repeat;
+    background: url("./design/mobile-design.jpg") no-repeat;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -32,34 +32,51 @@ body {
 }
 
 #website {
-    height: 720px;
-    width: 1440px;
+    /* height: 720px;
+    width: 1440px; */
+    height: 100%;
+    width: 100%;
     /* background-color: red; */
     position: absolute;
     background-color: hsl(185, 75%, 39%);
     overflow: hidden;
-    /* display: none; */
     font-family: 'Kumbh Sans', sans-serif;
     color: hsl(227, 10%, 46%);
+    display: flex;
+    /* display: none; */
 }
 
 #bg-pattern-top {
-    background: url(./images/bg-pattern-top.svg) no-repeat;
     position: absolute;
-    width: 100%;
-    height: 300%;
-    top: -512px;
-    left: -284px;
+    top: -502px;   
+    left: -277px;
+    height: 970px;
 }
 
 #bg-pattern-bottom {
-    background: url(./images/bg-pattern-bottom.svg) no-repeat;
     position: absolute;
-    width: 100%;
-    height: 300%;
     top: 375px;
     left: 693px;
+    height: 970px;
 }
+
+@media (max-width: 600px) {
+    #bg-pattern-top {
+        position: absolute;
+        top: -319px;   
+        left: -362px;
+        height: 570px;
+    }
+    
+    #bg-pattern-bottom {
+        position: absolute;
+        top: 354px;
+        left: 164px;
+        height: 640px;
+    }
+}
+
+
 
 
 .attribution { font-size: 11px; text-align: center; }
@@ -69,11 +86,25 @@ body {
     background-color: white;
     margin: auto;
     width: 350px;
-    height: 374px;
-    margin-top: 173px;
+    /* height: 374px; */
+    /* margin-top: 173px; */
     border-radius: 15px;
     position: relative;
     overflow: hidden;
+    /* display: none; */
+
+}
+
+@media (max-width: 600px) { 
+    .profile-card {
+        width: 326px;    
+    }
+}
+
+@media (max-width: 340px) { 
+    .profile-card {
+        border-radius: 0px;    
+    }
 }
 
 .header {
@@ -132,6 +163,7 @@ body {
 
 .statistics {
     margin-top: 30px;
+    margin-bottom: 25px;
     /* background-color: orange; */
     display: flex;
     flex-direction: row;
@@ -140,14 +172,31 @@ body {
     padding: 0 55px 0 48px
 }
 
+#likes {
+    margin-left: -10px;
+}
+
+@media (max-width: 300px) { 
+    .statistics {
+        flex-direction: column;
+        justify-content: space-around;
+        /* background-color: orange; */
+    }
+
+    .statistics__content {
+        margin: 12px 0;
+    }
+
+    #likes {
+        margin-left: 0
+    }
+}
+
 .statistics__content {
     text-align: center;
     letter-spacing: 1.5px;
 }
 
-#likes {
-    margin-left: -10px;
-}
 
 .statistics__content .tag {
     margin-top: 7px;
